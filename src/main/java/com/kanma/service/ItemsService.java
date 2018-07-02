@@ -1,6 +1,7 @@
 package com.kanma.service;
 
 import com.kanma.model.ItemsDomain;
+import com.kanma.model.User;
 
 import java.util.List;
 
@@ -11,4 +12,5 @@ import java.util.List;
  */
 public interface ItemsService {
     List<ItemsDomain> findAllItems();
+    int insertUser(User record);
 }

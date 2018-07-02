@@ -1,6 +1,7 @@
 package com.kanma.dao;
 
 import com.kanma.model.ItemsDomain;
+import com.kanma.model.User;
 
 import java.util.List;
 
@@ -10,6 +11,6 @@ import java.util.List;
  * @ Date   ：Created in 2018/7/2 22:24
  */
 public interface ItemsDao {
-    int insert(ItemsDomain record);
+    int insertUser(User record);
     List<ItemsDomain> selectItems();
 }

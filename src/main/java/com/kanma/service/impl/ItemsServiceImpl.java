@@ -2,6 +2,7 @@ package com.kanma.service.impl;
 
 import com.kanma.dao.ItemsDao;
 import com.kanma.model.ItemsDomain;
+import com.kanma.model.User;
 import com.kanma.service.ItemsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,7 +23,11 @@ public class ItemsServiceImpl implements ItemsService{
     @Override
     public List<ItemsDomain> findAllItems() {
         List<ItemsDomain> itemsDomains = itemsDao.selectItems();
-
         return itemsDomains;
+    }
+
+    @Override
+    public int insertUser(User record) {
+        return itemsDao.insertUser(record);
     }
 }
