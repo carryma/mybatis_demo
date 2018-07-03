@@ -30,4 +30,9 @@ public class ItemsServiceImpl implements ItemsService{
     public int insertUser(User record) {
         return itemsDao.insertUser(record);
     }
+
+    @Override
+    public User selectById(Integer id) {
+        return itemsDao.selectById(id);
+    }
 }

@@ -13,4 +13,5 @@ import java.util.List;
 public interface ItemsService {
     List<ItemsDomain> findAllItems();
     int insertUser(User record);
+    User selectById(Integer id);
 }

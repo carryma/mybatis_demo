@@ -44,4 +44,16 @@
         insert into user(id,username,birthday,sex,address) value(#{id},#{username},#{birthday},#{sex},#{address}) -->
 
     </insert>
+
+    <resultMap id="userMap" type="com.kanma.model.User">
+        <id property="id" column="id"/>
+        <result property="username" column="username"/>
+        <result property="birthday" column="birthday"/>
+        <result property="sex" column="sex"/>
+        <result property="address" column="address"/>
+    </resultMap>
+    <select id="selectById" resultMap="userMap">
+    <!-- 使用resultType = "com.kanma.model.User"也不会错-->
+        SELECT * FROM user WHERE id = #{id}
+    </select>
 </mapper>

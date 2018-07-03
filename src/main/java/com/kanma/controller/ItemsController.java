@@ -4,6 +4,7 @@ import com.kanma.model.ItemsDomain;
 import com.kanma.model.User;
 import com.kanma.service.ItemsService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -31,4 +32,8 @@ public class ItemsController {
                 return itemsService.insertUser(user);
         }
 
+        @RequestMapping(value = "/user/{id}",method = RequestMethod.GET)
+        public User selectUserById(@PathVariable Integer id){
+                return itemsService.selectById(id);
+        }
 }

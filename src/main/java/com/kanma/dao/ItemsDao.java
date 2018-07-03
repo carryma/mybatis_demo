@@ -13,4 +13,5 @@ import java.util.List;
 public interface ItemsDao {
     int insertUser(User record);
     List<ItemsDomain> selectItems();
+    User selectById(Integer id);
 }
