@@ -17,17 +17,16 @@ import java.util.List;
  * @ Date   ：Created in 2018/7/2 23:01
  */
 @RestController
-@RequestMapping(value = "/items")
 public class ItemsController {
         @Autowired
         private ItemsService itemsService;
 
-        @RequestMapping(value = "/list",method = RequestMethod.GET)
+        @RequestMapping(value = "/items/list",method = RequestMethod.GET)
         public List<ItemsDomain> findAll(){
                 return itemsService.findAllItems();
         }
 
-        @RequestMapping(value = "/add",method = RequestMethod.POST)
+        @RequestMapping(value = "/items/add",method = RequestMethod.POST)
         public int addUser(User user){
                 return itemsService.insertUser(user);
         }

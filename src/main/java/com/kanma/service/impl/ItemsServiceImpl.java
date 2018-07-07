@@ -7,6 +7,7 @@ import com.kanma.service.ItemsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -16,14 +17,14 @@ import java.util.List;
  */
 
 @Service(value = "itemsService")
-public class ItemsServiceImpl implements ItemsService{
+public class ItemsServiceImpl implements ItemsService {
 
-    @Autowired
+    @Resource
     private ItemsDao itemsDao;
+
     @Override
     public List<ItemsDomain> findAllItems() {
-        List<ItemsDomain> itemsDomains = itemsDao.selectItems();
-        return itemsDomains;
+        return itemsDao.selectItems();
     }
 
     @Override
