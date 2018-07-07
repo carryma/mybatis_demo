@@ -16,6 +16,11 @@ import java.util.List;
  */
 @Service(value = "orderService")
 public class OrdersServiceImpl implements OrdersService {
+    /*
+     * @Resource默认按照名称方式进行bean匹配，@Autowired默认按照类型方式进行bean匹配
+     * @Resource(import javax.annotation.Resource;)是J2EE的注解，
+     * @Autowired( import org.springframework.beans.factory.annotation.Autowired;)是Spring的注解
+     */
     @Resource
     private OrdersMapperCustom ordersMapperCustom;
 
