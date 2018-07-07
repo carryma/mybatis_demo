@@ -3,10 +3,10 @@
 <mapper namespace="com.kanma.mapper.OrdersMapperCustom">
     <resultMap id="OrdersUserResultMap" type="com.kanma.model.Orders">
         <id column="id" property="id"/>
-<!--        <result column="user_id" property="userId"/>
-        <result column="number" property="number"/>-->
+        <result column="user_id" property="userId"/>
+        <result column="number" property="number"/>
         <result column="createtime" property="createtime" jdbcType="TIMESTAMP"/>
-<!--        <result column="note" property="note"/>-->
+        <result column="note" property="note"/>
 
         <!-- 配置映射的关联的用户信息 -->
         <!-- association：用于映射关联查询单个对象的信息
@@ -26,8 +26,7 @@
 
     <select id="findOrdersUserResultMap" resultMap="OrdersUserResultMap">
         SELECT
-        orders.id,
-        orders.createtime,
+        orders.*,
         user.username,
         user.sex,
         user.address

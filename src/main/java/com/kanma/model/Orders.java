@@ -1,5 +1,7 @@
 package com.kanma.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
 import java.util.List;
 
@@ -29,6 +31,7 @@ public class Orders {
 
     private String number;
 
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone="GMT+8")
     private Date createtime;
 
     private String note;
