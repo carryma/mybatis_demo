@@ -2,7 +2,14 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.kanma.dao.ItemsDao">
     <sql id="BASE_TABLE">items</sql>
-    <sql id="BASE_COLUMN">id,name,price,detail,pic,createtime</sql>
+    <sql id="BASE_COLUMN">
+        id,
+        name,
+        price,
+        detail,
+        pic,
+        createtime
+    </sql>
 
     <!--    <select id="selectItems" resultType="com.kanma.model.ItemsDomain">
             SELECT
@@ -53,7 +60,7 @@
         <result property="address" column="address"/>
     </resultMap>
     <select id="selectById" resultMap="userMap">
-    <!-- 使用resultType = "com.kanma.model.User"也不会错-->
+        <!-- 使用resultType = "com.kanma.model.User"也不会错-->
         SELECT * FROM user WHERE id = #{id}
     </select>
 </mapper>
