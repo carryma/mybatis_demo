@@ -1,4 +1,4 @@
-package com.kanma.dao;
+package com.kanma.mapper;
 
 import com.kanma.model.ItemsDomain;
 import com.kanma.model.User;

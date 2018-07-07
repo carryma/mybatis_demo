@@ -1,6 +1,6 @@
 package com.kanma.service.impl;
 
-import com.kanma.dao.ItemsDao;
+import com.kanma.mapper.ItemsDao;
 import com.kanma.model.ItemsDomain;
 import com.kanma.model.User;
 import com.kanma.service.ItemsService;
