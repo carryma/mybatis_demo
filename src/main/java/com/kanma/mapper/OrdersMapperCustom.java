@@ -12,5 +12,6 @@ import java.util.List;
 public interface OrdersMapperCustom {
     //一对一查询
     List<Orders> findOrdersUserResultMap() throws Exception;
-
+    //一对多查询
+    List<Orders>  findOrdersAndOrderDetailResultMap()throws Exception;
 }

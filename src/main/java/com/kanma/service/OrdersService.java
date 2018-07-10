@@ -11,4 +11,5 @@ import java.util.List;
  */
 public interface OrdersService {
     List<Orders> findOrdersUserResultMap() throws Exception;
+    List<Orders>  findOrdersAndOrderDetailResultMap()throws Exception;
 }

@@ -1,7 +1,7 @@
 package com.kanma.controller;
 
 import com.kanma.model.Orders;
-import com.kanma.service.impl.OrdersServiceImpl;
+import com.kanma.service.OrdersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -18,13 +18,23 @@ import java.util.List;
 @RestController
 public class OrdersController {
     @Autowired
-    private OrdersServiceImpl ordersServiceImpl;
+    private OrdersService ordersService;
 
     @RequestMapping(value = "/orders", method = RequestMethod.GET)
     public List<Orders> findOrdersUser() {
         try {
-            List<Orders> resultMap = ordersServiceImpl.findOrdersUserResultMap();
-            return resultMap;
+            //List<Orders> resultMap = ordersService.findOrdersUserResultMap();
+            return ordersService.findOrdersUserResultMap();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    @RequestMapping(value = "/orders/details", method = RequestMethod.GET)
+    public List<Orders> findOrdersAndDetails() {
+        try {
+            return ordersService.findOrdersAndOrderDetailResultMap();
         } catch (Exception e) {
             e.printStackTrace();
             return null;

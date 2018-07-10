@@ -27,4 +27,9 @@ public class OrdersServiceImpl implements OrdersService {
     public List<Orders> findOrdersUserResultMap() throws Exception {
         return ordersMapperCustom.findOrdersUserResultMap();
     }
+
+    @Override
+    public List<Orders> findOrdersAndOrderDetailResultMap() throws Exception {
+        return ordersMapperCustom.findOrdersAndOrderDetailResultMap();
+    }
 }

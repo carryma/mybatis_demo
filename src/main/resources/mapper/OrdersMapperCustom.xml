@@ -24,6 +24,29 @@
         </association>
     </resultMap>
 
+    <resultMap id="OrdersAndOrderDetailResultMap" type="com.kanma.model.Orders" extends="OrdersUserResultMap">
+        <!-- 订单信息 -->
+        <!-- 用户信息 -->
+        <!-- 使用extends继承，不用在中配置订单信息和用户信息的映射 -->
+
+
+        <!-- 订单明细信息
+        一个订单关联查询出了多条明细，要使用collection进行映射
+        collection：对关联查询到多条记录映射到集合对象中
+        property：将关联查询到多条记录映射到com.kanma.model.Orders哪个属性
+        ofType：指定映射到list集合属性中pojo的类型
+         -->
+        <collection property="orderdetails" ofType="com.kanma.model.Orderdetail">
+            <!-- id：订单明细唯 一标识
+                 property:要将订单明细的唯 一标识 映射到com.iot.mybatis.po.Orderdetail的哪个属性
+            -->
+            <id property="id" column="orderdetail_id"/>
+            <result property="itemsId" column="items_id"/>
+            <result property="itemsNum" column="items_num" />
+            <result property="ordersId" column="orders_id" />
+        </collection>
+    </resultMap>
+
     <select id="findOrdersUserResultMap" resultMap="OrdersUserResultMap">
         SELECT
         orders.*,
@@ -34,5 +57,23 @@
         orders,
         user
         WHERE orders.user_id = user.id
+    </select>
+
+    <!--   select 标签的id属性和mapper接口中的方法对应.当调用接口方法是,将绑定该条sql语句进行数据库的查询.-->
+    <select id="findOrdersAndOrderDetailResultMap" resultMap="OrdersAndOrderDetailResultMap">
+        SELECT
+          orders.*,
+          user.username,
+          user.sex,
+          user.address,
+          orderdetail.id orderdetail_id,
+          orderdetail.items_id,
+          orderdetail.items_num,
+          orderdetail.orders_id
+        FROM
+          orders,
+          user,
+          orderdetail
+        WHERE orderdetail.orders_id=orders.id AND orders.user_id = user.id
     </select>
 </mapper>
