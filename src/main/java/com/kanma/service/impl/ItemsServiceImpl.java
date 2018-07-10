@@ -4,7 +4,6 @@ import com.kanma.mapper.ItemsDao;
 import com.kanma.model.ItemsDomain;
 import com.kanma.model.User;
 import com.kanma.service.ItemsService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

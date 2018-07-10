@@ -3,7 +3,6 @@ package com.kanma.service.impl;
 import com.kanma.mapper.OrdersMapperCustom;
 import com.kanma.model.Orders;
 import com.kanma.service.OrdersService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
