@@ -17,6 +17,7 @@ import java.util.List;
 
 @RestController
 public class OrdersController {
+    //final static Logger logger = LoggerFactory.getLogger(OrdersController.class);
     @Autowired
     private OrdersService ordersService;
 
@@ -34,6 +35,7 @@ public class OrdersController {
     @RequestMapping(value = "/orders/details", method = RequestMethod.GET)
     public List<Orders> findOrdersAndDetails() {
         try {
+           // logger.info("查询结果集{}",ordersService.findOrdersAndOrderDetailResultMap());
             return ordersService.findOrdersAndOrderDetailResultMap();
         } catch (Exception e) {
             e.printStackTrace();

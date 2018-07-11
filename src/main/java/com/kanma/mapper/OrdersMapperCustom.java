@@ -1,6 +1,7 @@
 package com.kanma.mapper;
 
 import com.kanma.model.Orders;
+import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 
@@ -9,6 +10,7 @@ import java.util.List;
  * @ Author ：MaKang
  * @ Date   ：Created in 2018/7/8 1:59
  */
+@Mapper
 public interface OrdersMapperCustom {
     //一对一查询
     List<Orders> findOrdersUserResultMap() throws Exception;
